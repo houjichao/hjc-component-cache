@@ -17,8 +17,14 @@ import java.util.Map;
  */
 public class ThreadCache {
 	private static Logger logger = LoggerFactory.getLogger(ThreadCache.class);
-	private static ThreadLocal<Map<Class<?>, Object>> cacheData = new ThreadLocal<Map<Class<?>, Object>>();// 缓存数据
-	private static ThreadLocal<List<AsyncInvoker>> asyncList = new ThreadLocal<List<AsyncInvoker>>();// 用于数据库commit后的异步调用
+	/**
+	 * 缓存数据
+	 */
+	private static ThreadLocal<Map<Class<?>, Object>> cacheData = new ThreadLocal<Map<Class<?>, Object>>();
+	/**
+	 * 用于数据库commit后的异步调用
+	 */
+	private static ThreadLocal<List<AsyncInvoker>> asyncList = new ThreadLocal<List<AsyncInvoker>>();
 
 	/**
 	 * 初始化缓存

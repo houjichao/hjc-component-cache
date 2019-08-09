@@ -45,9 +45,11 @@ public class CacheFactory {
     
     public static ICache getCache(CacheType type, String region) {
         if (type == CacheType.REDIS) {
-            return getRedisCache();//后台配置
+            //后台配置
+            return getRedisCache();
         } else if (type == CacheType.REDIS_DNY) {
-            return getRedisCache(REDIS_DNY_PROPS);//前台配置
+            //前台配置
+            return getRedisCache(REDIS_DNY_PROPS);
         }
         
         if (type == CacheType.JCS) {
@@ -66,7 +68,6 @@ public class CacheFactory {
             }
             return cache;
         }
-        
         throw new RuntimeException("不支持的缓存类型：" + type);
     }
 }

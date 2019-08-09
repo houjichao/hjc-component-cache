@@ -14,7 +14,7 @@ public interface ICache {
 	 *            缓存KEY
 	 * @return 缓存对象
 	 */
-	public CacheWrapper get(CacheKey key);
+	CacheWrapper get(CacheKey key);
 
 	/**
 	 * 储存缓存，key存在直接覆盖
@@ -24,7 +24,7 @@ public interface ICache {
 	 * @param wrapper
 	 *            缓存对象
 	 */
-	public void put(CacheKey key, CacheWrapper wrapper);
+	void put(CacheKey key, CacheWrapper wrapper);
 
 	/**
 	 * 删除缓存
@@ -32,7 +32,7 @@ public interface ICache {
 	 * @param key
 	 *            缓存KEY
 	 */
-	public void del(CacheKey key);
+	void del(CacheKey key);
 
 	/**
 	 * 自增
@@ -40,14 +40,14 @@ public interface ICache {
 	 * @param key 缓存KEY
 	 * @return
 	 */
-	public Long incr(CacheKey key);
+	Long incr(CacheKey key);
 	/**
 	 * 自减
 	 * 
 	 * @param key 缓存KEY
 	 * @return
 	 */
-	public Long decr(CacheKey key);
+	Long decr(CacheKey key);
 	
 	/**
 	 * 设置过期时间
@@ -56,6 +56,6 @@ public interface ICache {
 	 * @param expire 过期时间
 	 * @return
 	 */
-	public Long expire(CacheKey key, int expire);
+	Long expire(CacheKey key, int expire);
 	
 }

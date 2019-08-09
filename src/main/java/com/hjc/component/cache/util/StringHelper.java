@@ -56,7 +56,6 @@ public class StringHelper {
                 return false;
             }
         }
-
         return true;
     }
 

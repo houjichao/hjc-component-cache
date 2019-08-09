@@ -32,9 +32,18 @@ public class RedisCacheManager extends RedisCache {
 	private static final Map<String, Map<String, RefreshInvoker>> invokerCahce = new ConcurrentHashMap<String, Map<String, RefreshInvoker>>();
 	private static final Logger logger = LoggerFactory.getLogger(RedisCacheManager.class);
 	private static long MIN = DateUtil.str2Date("20160501000000").getTime();
-	private String namespace = StringHelper.EMPTY;// 命名空间
-	private int thresholdTime = 12;// 过期阀值，单位秒
-	private int waitTimeout = 60;// 等待超时，单位秒
+	/**
+	 * 命名空间
+	 */
+	private String namespace = StringHelper.EMPTY;
+	/**
+	 * 过期阀值，单位秒
+	 */
+	private int thresholdTime = 12;
+	/**
+	 * 等待超时，单位秒
+	 */
+	private int waitTimeout = 60;
 
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;

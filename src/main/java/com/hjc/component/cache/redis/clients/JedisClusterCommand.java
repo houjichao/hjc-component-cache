@@ -37,7 +37,7 @@ public abstract class JedisClusterCommand<T> {
             long cst = System.currentTimeMillis() - st;
             if (cst > connectionHandler.getSlowtime()) {
                 StringBuilder msg = new StringBuilder(JedisClusterInfoCache.getNodeKey(connection))
-                    .append(" -> ").append(cst).append(" ms,key: " + SafeEncoder.encode(key));
+                        .append(" -> ").append(cst).append(" ms,key: " + SafeEncoder.encode(key));
                 if (out != null && out.getClass() == byte[].class) {
                     byte[] buf = (byte[]) out;
                     msg.append(" value's length: " + buf.length);

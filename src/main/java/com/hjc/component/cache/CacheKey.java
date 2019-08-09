@@ -8,9 +8,18 @@ import java.io.Serializable;
 
 public class CacheKey implements Serializable {
 	private static final long serialVersionUID = -7299223069008165363L;
-	private String namespace;// 为了防止不同应用Key冲突
-	private String key;// 缓存Key
-	private String hfield;// 哈希的field(如何设置此项，则使用hash存储)
+	/**
+	 * 为了防止不同应用Key冲突
+	 */
+	private String namespace;
+	/**
+	 * 缓存Key
+	 */
+	private String key;
+	/**
+	 * 哈希的field(如何设置此项，则使用hash存储)
+	 */
+	private String hfield;
 
 	public static CacheKey from(byte[] fullKeyBytes) {
 		String[] args = Serialize.fstdeserialize(fullKeyBytes);

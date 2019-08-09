@@ -165,7 +165,6 @@ public class JedisClusterFactory implements PooledObjectFactory<Jedis> {
                     }
                 }
             }
-            
             logger.warn(
                 "validate jedis false!" + JedisClusterInfoCache.getNodeKey(jedis.getClient()));
             return false;
